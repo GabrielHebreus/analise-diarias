@@ -36,16 +36,10 @@ function gerarDetalhamento() {
 
 }
 
-function copiarDetalhamento() {
-  const resultado = document.getElementById("resultado").innerText;
-
-  if (resultado.trim() !== "") {
-    navigator.clipboard.writeText(resultado)
-      .then(() => {
-        alert("Detalhamento copiado com sucesso!");
-      })
-      .catch(err => {
-        alert("Erro ao copiar: " + err);
-      });
-  }
+function copiarTexto() {
+  const texto = document.getElementById("resultado").innerText;
+  navigator.clipboard.writeText(texto).then(() => {
+    alert("Detalhamento copiado para a área de transferência!");
+  });
 }
+

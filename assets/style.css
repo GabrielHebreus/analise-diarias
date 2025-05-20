@@ -1,93 +1,112 @@
-
-   /* Estilo inspirado no site estoico: elegante, escuro e clássico */
+/* Estilo profissional com inspiração estoica e fonte mais discreta */
 body {
-  font-family: 'Georgia', serif;
-  background-color: #0d0d15;
-  color: #dcdcdc;
+  font-family: "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+  background-color: #111111;
+  color: #e0dfdc;
   padding: 2rem;
-  line-height: 1.6;
+  margin: 0;
 }
 
 .container {
-  background-color: #12121c;
-  border-radius: 12px;
+  background: #1a1a1a;
+  border-radius: 10px;
   padding: 2rem;
-  max-width: 700px;
+  max-width: 600px;
   margin: auto;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
-  border: 1px solid #2b2b3d;
-  color: #e0e0e0;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  border: 1px solid #2a2a2a;
+}
+
+h2 {
+  color: #f4f1ed;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 500;
 }
 
 label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #c7c7d6;
-  font-weight: bold;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: #d5d2cf;
+  font-weight: 600;
 }
 
 input[type="text"],
 input[type="number"] {
-  width: 100%;
   padding: 0.6rem;
-  border-radius: 8px;
-  border: 1px solid #2a2a3a;
-  background-color: #1a1a27;
-  color: #f5f5f5;
-  font-size: 1rem;
-  transition: border 0.3s;
-}
-
-input:focus {
-  outline: none;
-  border-color: #e5b35c;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  border: 1px solid #3a3a3a;
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  box-sizing: border-box;
 }
 
 button {
-  background: linear-gradient(135deg, #e5b35c, #e0a94f);
-  color: #0d0d15;
-  padding: 0.8rem 1.5rem;
+  background: #c2b280;
+  color: #111111;
+  padding: 0.7rem 1.4rem;
   border: none;
-  border-radius: 8px;
-  font-weight: bold;
+  border-radius: 6px;
   cursor: pointer;
-  font-family: 'Georgia', serif;
-  font-size: 1rem;
-  box-shadow: 0 0 10px rgba(229, 179, 92, 0.3);
-  transition: background 0.3s, transform 0.2s;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  width: 100%;
 }
 
 button:hover {
-  background: linear-gradient(135deg, #f3c77b, #e5b35c);
-  transform: translateY(-2px);
+  background: #b1a072;
 }
 
 .output {
   margin-top: 2rem;
-  background-color: #1a1a27;
-  border-left: 5px solid #e5b35c;
-  padding: 1.5rem;
-  border-radius: 8px;
-  color: #f5f5f5;
+  background: #1e1e1e;
+  border-left: 4px solid #c2b280;
+  padding: 1.2rem;
+  border-radius: 6px;
+  white-space: pre-line;
+  font-size: 1rem;
 }
 
-.block {
-  margin-bottom: 2rem;
-}
-
-h1, h2, h3 {
-  font-family: 'Georgia', serif;
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
-}
-
-hr {
+#copiarBtn {
+  background-color: #3d3d3d;
+  color: #f1f1f1;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
   border: none;
-  border-top: 1px solid #2e2e42;
-  margin: 2rem 0;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+}
+
+#copiarBtn:hover {
+  background-color: #5c5c5c;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  button,
+  #copiarBtn {
+    font-size: 1rem;
+  }
+
+  .output {
+    font-size: 0.95rem;
+  }
 }
