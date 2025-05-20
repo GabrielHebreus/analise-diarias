@@ -1,14 +1,24 @@
 # Sistema de Análise de Diárias
 
-Este é um sistema web simples para gerar o detalhamento de notas de prestação de serviços, seguindo um modelo padrão para duas empresas: PLANETA e PLANESE.
+Sistema web simples e funcional, desenvolvido para gerar automaticamente o detalhamento de notas fiscais de prestação de serviços, seguindo o modelo padrão utilizado pelas empresas **PLANETA** e **PLANESE**.
 
-## Funcionalidades
+## 🔧 Funcionalidades
 
-- Entrada de valor total da nota e período de prestação.
-- Geração automática do detalhamento dividido entre as duas empresas.
-- Modelo de saída padronizado conforme solicitado.
-- Código simples, organizado em HTML, CSS e JavaScript.
+- 💰 Entrada do valor total da nota fiscal.
+- 📅 Campo para informar o período de prestação do serviço.
+- 📄 Geração automática do detalhamento formatado.
+- 🧾 Modelo de saída padronizado conforme solicitado pelas empresas.
+- ⚙️ Interface leve, intuitiva e responsiva.
+- 💻 Código-fonte limpo e modular (HTML, CSS e JavaScript).
 
-## Estrutura do projeto
+## 📁 Estrutura do Projeto
 
-# analise-diarias
+```
+analise-diarias/
+│
+├── index.html          # Estrutura da página principal
+├── assets/
+│   └── style.css       # Estilos visuais (tema estoico e profissional)
+└── script/
+    └── script.js       # Lógica de geração e cópia do detalhamento
+```
