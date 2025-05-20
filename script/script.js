@@ -43,3 +43,23 @@ function copiarTexto() {
   });
 }
 
+document.getElementById('periodo').addEventListener('input', function (e) {
+  const valor = e.target.value.replace(/\D/g, ''); // Remove tudo que não for número
+
+  let dataFormatada = '';
+  if (valor.length <= 2) {
+    dataFormatada = valor;
+  } else if (valor.length <= 4) {
+    dataFormatada = `${valor.slice(0, 2)}/${valor.slice(2)}`;
+  } else if (valor.length <= 8) {
+    dataFormatada = `${valor.slice(0, 2)}/${valor.slice(2, 4)}/${valor.slice(4)}`;
+  } else if (valor.length <= 10) {
+    dataFormatada = `${valor.slice(0, 2)}/${valor.slice(2, 4)}/${valor.slice(4, 8)} - ${valor.slice(8)}`;
+  } else if (valor.length <= 16) {
+    dataFormatada = `${valor.slice(0, 2)}/${valor.slice(2, 4)}/${valor.slice(4, 8)} - ${valor.slice(8, 10)}/${valor.slice(10, 12)}/${valor.slice(12, 16)}`;
+  } else {
+    dataFormatada = `${valor.slice(0, 2)}/${valor.slice(2, 4)}/${valor.slice(4, 8)} - ${valor.slice(8, 10)}/${valor.slice(10, 12)}/${valor.slice(12, 16)}`;
+  }
+
+  e.target.value = dataFormatada;
+});
