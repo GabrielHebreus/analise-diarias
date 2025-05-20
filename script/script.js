@@ -43,23 +43,48 @@ function copiarTexto() {
   });
 }
 
-document.getElementById('periodo').addEventListener('input', function (e) {
-  const valor = e.target.value.replace(/\D/g, ''); // Remove tudo que não for número
+const input = document.getElementById('periodo');
 
+input.addEventListener('input', function(e) {
+  const input = e.target;
+  let valor = input.value;
+
+  // Salva a posição atual do cursor
+  let cursorPos = input.selectionStart;
+
+  // Remove tudo que não for número
+  let numeros = valor.replace(/\D/g, '');
+
+  // Formata a data conforme o tamanho dos números
   let dataFormatada = '';
-  if (valor.length <= 2) {
-    dataFormatada = valor;
-  } else if (valor.length <= 4) {
-    dataFormatada = `${valor.slice(0, 2)}/${valor.slice(2)}`;
-  } else if (valor.length <= 8) {
-    dataFormatada = `${valor.slice(0, 2)}/${valor.slice(2, 4)}/${valor.slice(4)}`;
-  } else if (valor.length <= 10) {
-    dataFormatada = `${valor.slice(0, 2)}/${valor.slice(2, 4)}/${valor.slice(4, 8)} - ${valor.slice(8)}`;
-  } else if (valor.length <= 16) {
-    dataFormatada = `${valor.slice(0, 2)}/${valor.slice(2, 4)}/${valor.slice(4, 8)} - ${valor.slice(8, 10)}/${valor.slice(10, 12)}/${valor.slice(12, 16)}`;
+  if (numeros.length <= 2) {
+    dataFormatada = numeros;
+  } else if (numeros.length <= 4) {
+    dataFormatada = `${numeros.slice(0, 2)}/${numeros.slice(2)}`;
+  } else if (numeros.length <= 8) {
+    dataFormatada = `${numeros.slice(0, 2)}/${numeros.slice(2, 4)}/${numeros.slice(4)}`;
+  } else if (numeros.length <= 10) {
+    dataFormatada = `${numeros.slice(0, 2)}/${numeros.slice(2, 4)}/${numeros.slice(4, 8)} - ${numeros.slice(8)}`;
+  } else if (numeros.length <= 16) {
+    dataFormatada = `${numeros.slice(0, 2)}/${numeros.slice(2, 4)}/${numeros.slice(4, 8)} - ${numeros.slice(8, 10)}/${numeros.slice(10, 12)}/${numeros.slice(12, 16)}`;
   } else {
-    dataFormatada = `${valor.slice(0, 2)}/${valor.slice(2, 4)}/${valor.slice(4, 8)} - ${valor.slice(8, 10)}/${valor.slice(10, 12)}/${valor.slice(12, 16)}`;
+    dataFormatada = `${numeros.slice(0, 2)}/${numeros.slice(2, 4)}/${numeros.slice(4, 8)} - ${numeros.slice(8, 10)}/${numeros.slice(10, 12)}/${numeros.slice(12, 16)}`;
   }
 
-  e.target.value = dataFormatada;
+  // Atualiza o valor formatado no input
+  input.value = dataFormatada;
+
+  // Ajusta a posição do cursor para não "pular"
+  // Isso evita que o cursor vá para o fim sempre que o usuário apaga algo no meio
+  // Calcula quantos caracteres extras foram adicionados (slashes, espaços, hífen)
+  let extrasAntesCursor = (dataFormatada.slice(0, cursorPos).match(/[\/ -]/g) || []).length;
+  let numerosAntesCursor = (valor.slice(0, cursorPos).match(/\d/g) || []).length;
+
+  // Novo cursor considerando os caracteres extras
+  cursorPos = numerosAntesCursor + extrasAntesCursor;
+
+  // Limita cursor para dentro do valor formatado
+  if(cursorPos > dataFormatada.length) cursorPos = dataFormatada.length;
+
+  input.setSelectionRange(cursorPos, cursorPos);
 });
