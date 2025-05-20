@@ -1,42 +1,93 @@
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 2rem;
-      color: #333;
-    }
-    .container {
-      background: #fff;
-      border-radius: 10px;
-      padding: 2rem;
-      max-width: 600px;
-      margin: auto;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-    label, input {
-      display: block;
-      width: 100%;
-      margin-bottom: 1rem;
-    }
-    input[type="text"], input[type="number"] {
-      padding: 0.5rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background: #007bff;
-      color: white;
-      padding: 0.7rem 1.2rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .output {
-      margin-top: 2rem;
-      background: #f9f9f9;
-      border-left: 5px solid #007bff;
-      padding: 1rem;
-    }
-    .block {
-      margin-bottom: 1.5rem;
-    }
+   /* Estilo inspirado no site estoico: elegante, escuro e clássico */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #0d0d15;
+  color: #dcdcdc;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.container {
+  background-color: #12121c;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+  border: 1px solid #2b2b3d;
+  color: #e0e0e0;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #c7c7d6;
+  font-weight: bold;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #2a2a3a;
+  background-color: #1a1a27;
+  color: #f5f5f5;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #e5b35c;
+}
+
+button {
+  background: linear-gradient(135deg, #e5b35c, #e0a94f);
+  color: #0d0d15;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(229, 179, 92, 0.3);
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #f3c77b, #e5b35c);
+  transform: translateY(-2px);
+}
+
+.output {
+  margin-top: 2rem;
+  background-color: #1a1a27;
+  border-left: 5px solid #e5b35c;
+  padding: 1.5rem;
+  border-radius: 8px;
+  color: #f5f5f5;
+}
+
+.block {
+  margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+  font-family: 'Georgia', serif;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #2e2e42;
+  margin: 2rem 0;
+}

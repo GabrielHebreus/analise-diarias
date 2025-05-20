@@ -32,4 +32,20 @@ function gerarDetalhamento() {
 
   document.getElementById('resultado').innerHTML =
     modelo('PLANETA') + modelo('PLANESE');
+  document.getElementById("copiarBtn").style.display = "inline-block";
+
+}
+
+function copiarDetalhamento() {
+  const resultado = document.getElementById("resultado").innerText;
+
+  if (resultado.trim() !== "") {
+    navigator.clipboard.writeText(resultado)
+      .then(() => {
+        alert("Detalhamento copiado com sucesso!");
+      })
+      .catch(err => {
+        alert("Erro ao copiar: " + err);
+      });
+  }
 }
