@@ -39,9 +39,10 @@ function gerarDetalhamento() {
 function copiarTexto() {
   const texto = document.getElementById("resultado").innerText;
   navigator.clipboard.writeText(texto).then(() => {
-    alert("Detalhamento copiado para a área de transferência!");
+    mostrarToast("Detalhamento copiado para a área de transferência!");
   });
 }
+
 
 const input = document.getElementById('periodo');
 
@@ -88,3 +89,18 @@ input.addEventListener('input', function(e) {
 
   input.setSelectionRange(cursorPos, cursorPos);
 });
+
+function mostrarToast(mensagem) {
+  const toast = document.getElementById('toast');
+  toast.textContent = mensagem;
+  toast.style.visibility = 'visible';
+  toast.style.opacity = '1';
+
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    // Depois da transição esconder de fato para evitar interação
+    setTimeout(() => {
+      toast.style.visibility = 'hidden';
+    }, 500);
+  }, 2000); // Exibe por 2 segundos
+}

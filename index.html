@@ -19,7 +19,27 @@
 
     <div class="output" id="resultado"></div>
     <button id="copiarBtn" onclick="copiarTexto()">Copiar Detalhamento</button>
-  </div>  
+  </div> 
+   <div id="toast" style="
+  visibility: hidden;
+  min-width: 200px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  ">
+  Detalhamento copiado para a área de transferência!
+</div>
+
   <script src="./script/script.js"></script>
 </body>
 </html>
