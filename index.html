@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./assets/style.css">
-  <title>Análise de Diárias</title>  
+  <link rel="stylesheet" href="./assets/style.css" />
+  <title>Análise de Diárias</title>
 </head>
+
 <body>
   <div class="container">
     <h2>Análise de Diárias</h2>
@@ -18,9 +20,12 @@
     <button onclick="gerarDetalhamento()">Gerar Detalhamento</button>
 
     <div class="output" id="resultado"></div>
-    <button id="copiarBtn" onclick="copiarTexto()">Copiar Detalhamento</button>
-  </div> 
-   <div id="toast" style="
+    <button id="copiarBtn" onclick="copiarTexto()" style="display: none;">
+      Copiar para área de transferência
+    </button>
+
+    <!-- Toast para notificação sutil -->
+    <div id="toast" style="
   visibility: hidden;
   min-width: 200px;
   background-color: #333;
@@ -36,10 +41,11 @@
   z-index: 1000;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-  ">
-  Detalhamento copiado para a área de transferência!
-</div>
+">
+      Detalhamento copiado para a área de transferência!
+    </div>
 
-  <script src="./script/script.js"></script>
+    <script src="./script/script.js"></script>
 </body>
+
 </html>
