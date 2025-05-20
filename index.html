@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>Análise de Diárias</title>  
+</head>
+<body>
+  <div class="container">
+    <h2>Análise de Diárias</h2>
+    <label for="valorNota">Valor da Nota (R$)</label>
+    <input type="number" id="valorNota" step="0.01" placeholder="Ex: 5700" />
+
+    <label for="periodo">Período</label>
+    <input type="text" id="periodo" placeholder="Ex: 20/05/2025 - 25/05/2025" />
+
+    <button onclick="gerarDetalhamento()">Gerar Detalhamento</button>
+
+    <div class="output" id="resultado"></div>
+  </div>  
+   <script src="./script/script.js"></script>
+</body>
+</html>
