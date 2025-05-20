@@ -11,3 +11,4 @@ Este é um sistema web simples para gerar o detalhamento de notas de prestação
 
 ## Estrutura do projeto
 
+# analise-diarias
