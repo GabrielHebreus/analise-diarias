@@ -37,13 +37,27 @@ input[type="number"] {
   width: 100%;
   margin-bottom: 1.5rem;
   border-radius: 6px;
-  border: 1px solid #3a3a3a;
+  border: 1px solid #505050;
   background-color: #1e1e1e;
-  color: #f1f1f1;
+  color: #ffffff;
   box-sizing: border-box;
+  transition: border 0.3s ease;
 }
 
-button {
+input::placeholder {
+  color: #888;
+  opacity: 0.7;
+}
+
+input:focus,
+button:focus,
+#copiarBtn:focus {
+  outline: 2px solid #c2b280;
+  outline-offset: 2px;
+}
+
+button,
+#copiarBtn {
   background: #c2b280;
   color: #111111;
   padding: 0.7rem 1.4rem;
@@ -51,12 +65,14 @@ button {
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.3s ease;
   width: 100%;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
+button:hover,
+#copiarBtn:hover {
   background: #b1a072;
+  transform: scale(1.01);
 }
 
 .output {
@@ -67,22 +83,37 @@ button:hover {
   border-radius: 6px;
   white-space: pre-line;
   font-size: 1rem;
+  line-height: 1.6;
 }
 
+/* Botão de copiar com estilo diferenciado */
 #copiarBtn {
   background-color: #3d3d3d;
   color: #f1f1f1;
   margin-top: 1rem;
-  padding: 0.6rem 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  width: 100%;
-  font-weight: 600;
 }
 
 #copiarBtn:hover {
   background-color: #5c5c5c;
+}
+
+/* Toast customizado */
+#toast {
+  visibility: hidden;
+  min-width: 200px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 /* Responsivo */
